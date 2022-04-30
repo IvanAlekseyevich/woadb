@@ -14,10 +14,24 @@ class User(AbstractUser):
         (MODERATOR, 'модератор'),
         (ADMIN, 'администратор'),
     )
-    username = models.CharField(verbose_name='никнейм', max_length=150, unique=True, db_index=True)
-    email = models.EmailField(verbose_name='email', max_length=254, unique=True)
+    username = models.CharField(
+        verbose_name='никнейм',
+        max_length=150,
+        unique=True,
+        db_index=True
+    )
+    email = models.EmailField(
+        verbose_name='email',
+        max_length=254,
+        unique=True
+    )
     bio = models.TextField(verbose_name='биография', null=True)
-    role = models.CharField(verbose_name='роль', max_length=10, choices=ROLE_CHOICES, default=USER)
+    role = models.CharField(
+        verbose_name='роль',
+        max_length=10,
+        choices=ROLE_CHOICES,
+        default=USER
+    )
 
     @property
     def is_moderator(self):
@@ -39,7 +53,11 @@ class User(AbstractUser):
 class Category(models.Model):
     """Содержит категории произведений."""
     name = models.CharField(verbose_name='название категории', max_length=256)
-    slug = models.SlugField(verbose_name='сокращение категории', unique=True, max_length=50)
+    slug = models.SlugField(
+        verbose_name='сокращение категории',
+        unique=True,
+        max_length=50
+    )
 
     class Meta:
         ordering = ['name']
@@ -53,7 +71,11 @@ class Category(models.Model):
 class Genre(models.Model):
     """Содержит жанры произведений."""
     name = models.CharField(verbose_name='название жанра', max_length=256)
-    slug = models.SlugField(verbose_name='сокращение жанра', unique=True, max_length=50)
+    slug = models.SlugField(
+        verbose_name='сокращение жанра',
+        unique=True,
+        max_length=50
+    )
 
     class Meta:
         ordering = ['name']
@@ -69,12 +91,22 @@ class Title(models.Model):
     name = models.TextField(verbose_name='произведение')
     year = models.PositiveSmallIntegerField(
         validators=[
-            MinValueValidator(0, 'Год произведения не может быть отрицательным!'),
-            MaxValueValidator(2022, 'Нельзя публиковать произведения из будущего!')
+            MinValueValidator(
+                0,
+                'Год произведения не может быть отрицательным!'
+            ),
+            MaxValueValidator(
+                2022,
+                'Нельзя публиковать произведения из будущего!'
+            )
         ],
         verbose_name='год'
     )
-    description = models.TextField(verbose_name='описание', blank=True, null=True)
+    description = models.TextField(
+        verbose_name='описание',
+        blank=True,
+        null=True
+    )
     genre = models.ManyToManyField(
         Genre,
         related_name='titles',
@@ -119,13 +151,21 @@ class Review(models.Model):
         ],
         verbose_name='оценка произведения'
     )
-    pub_date = models.DateTimeField(verbose_name='дата публикации отзыва', auto_now_add=True)
+    pub_date = models.DateTimeField(
+        verbose_name='дата публикации отзыва',
+        auto_now_add=True
+    )
 
     class Meta:
         ordering = ['-pub_date']
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'
-        constraints = [models.UniqueConstraint(fields=['title', 'author'], name='unique')]
+        constraints = [
+            models.UniqueConstraint(
+                fields=['title', 'author'],
+                name='unique'
+            )
+        ]
 
     def __str__(self):
         return self.text
@@ -140,7 +180,10 @@ class Comment(models.Model):
         related_name='comments',
         verbose_name='автор комментария'
     )
-    pub_date = models.DateTimeField(verbose_name='дата публикации комментария', auto_now_add=True)
+    pub_date = models.DateTimeField(
+        verbose_name='дата публикации комментария',
+        auto_now_add=True
+    )
     review = models.ForeignKey(
         Review,
         on_delete=models.CASCADE,

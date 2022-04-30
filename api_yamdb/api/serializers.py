@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-
-from reviews.models import Category, Genre, Title, Review, Comment
+from reviews.models import Category, Comment, Genre, Review, Title
 
 User = get_user_model()
 
@@ -28,7 +27,14 @@ class UsersSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'bio', 'role')
+        fields = (
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+            'bio',
+            'role'
+        )
 
     def validate_username(self, value):
         if value == 'me':
@@ -41,7 +47,14 @@ class MeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'bio', 'role')
+        fields = (
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+            'bio',
+            'role'
+        )
         read_only_fields = ('role',)
 
     def validate_username(self, value):
@@ -86,7 +99,10 @@ class TitleCreateSerializer(serializers.ModelSerializer):
 
 
 class TitleSerializer(serializers.ModelSerializer):
-    """Возвращает список всех произведений, обновляет и удаляет произведения."""
+    """
+    Возвращает список всех произведений,
+    обновляет и удаляет произведения.
+    """
     category = CategorySerializer()
     genre = GenreSerializer(many=True)
     rating = serializers.IntegerField()
@@ -97,7 +113,10 @@ class TitleSerializer(serializers.ModelSerializer):
 
 
 class ReviewSerializer(serializers.ModelSerializer):
-    """Возвращает список всех отзывов, создает, обновляет и удаляет отзывы к произведениям."""
+    """
+    Возвращает список всех отзывов, создает,
+    обновляет и удаляет отзывы к произведениям.
+    """
     author = serializers.StringRelatedField(
         read_only=True, default=serializers.CurrentUserDefault())
 
@@ -108,7 +127,10 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    """Возвращает список всех комментариев, создает, обновляет и удаляет комментарии к отзывам."""
+    """
+    Возвращает список всех комментариев, создает,
+    обновляет и удаляет комментарии к отзывам.
+    """
     author = serializers.StringRelatedField(
         read_only=True, default=serializers.CurrentUserDefault())
 
