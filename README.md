@@ -53,6 +53,8 @@ HOST                   # адрес вашего удаленного серве
 USERNAME               # ваш логин на удаленном сервере
 SSH_KEY                # ваш секретный ключ ssh
 PASSPHRASE             # фраза-пароль при создании ssh ключа
+DOCKERHUB_USERNAME     # ваш логин на docker.com
+DOCKERHUB_TOKEN        # ваш пароль на docker.com
 TELEGRAM_TO            # id вашего аккаунта в telegram (узнать можно у бота @userinfobot)
 TELEGRAM_TOKEN         # токен для доступа к вашему боту (узнать можно у бота @BotFather)
 SECRET_KEY             # ключ для генерации хэша Django
