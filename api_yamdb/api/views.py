@@ -21,9 +21,8 @@ class SignupAPIView(APIView):
     """Создает пользователя."""
     def __send_email(self, user):
         confirmation_code = tokens.default_token_generator.make_token(user)
-        theme = 'Activation'
         send_mail(
-            f'{theme}',
+            'Activation',
             f'{user.username}, Ваш код подтверждения {confirmation_code}',
             settings.EMAIL_HOST_USER,
             [user.email],
