@@ -1,4 +1,4 @@
-[![YaMDb workflow](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow.yml)
+[![YaMDb workflow push](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml/badge.svg)](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml)
 # YaMDb CI & CD 
 
 ***YaMDb - API проект, собирающий отзывы пользователей на различные произведения***
