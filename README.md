@@ -1,5 +1,4 @@
-![workflow](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svgbadge.svg?branch=main)
-
+[![YaMDb workflow](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow.yml)
 # YaMDb CI & CD 
 
 ***YaMDb - API проект, собирающий отзывы пользователей на различные произведения***
@@ -40,9 +39,10 @@ scp infra/docker-compose.yaml <ваш_логин_на_сервере>@<адре�
 scp infra/nginx/default.conf <ваш_логин_на_сервере>@<адрес_вашего_сервера>:~/nginx/
 ```
 
-Установите на удаленном сервере Docker
+Зайдите на свой удаленный сервер и установите Docker
 
 ```sh
+ssh <ваш_логин_на_сервере>@<адрес_вашего_сервера>
 sudo apt install docker.io
 ```
 
