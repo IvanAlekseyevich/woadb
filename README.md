@@ -45,7 +45,7 @@ scp infra/nginx/default.conf <ваш_логин_на_сервере>@<адрес
 
 ```sh
 ssh <ваш_логин_на_сервере>@<адрес_вашего_сервера>
-sudo apt install docker.io
+sudo apt install docker-ce docker-compose -y
 ```
 
 Добавьте в настройках к репозитарию следующие Actions secrets:
