@@ -1,7 +1,7 @@
 [![YaMDb workflow push](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml/badge.svg)](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml)
 # YaMDb CI & CD 
 
-*** [YaMDb](https://github.com/pozarnik/yamdb_api) - API проект, собирающий отзывы пользователей на различные произведения***
+***[YaMDb](https://github.com/pozarnik/yamdb_api) - API проект, собирающий отзывы пользователей на различные произведения***
 
 ## Возможности проекта YaMDb
 
