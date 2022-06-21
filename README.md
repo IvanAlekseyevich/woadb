@@ -30,6 +30,7 @@
 - PostgreSQL 13.0
 - Gunicorn 20.0.4
 - nginx 1.21.3
+- Docker
 - GitHub Actions
 
 ## Установка и запуск проекта
