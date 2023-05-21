@@ -1,4 +1,4 @@
-from api_yamdb import settings
+from woadb import settings
 
 
 class TestSettings:

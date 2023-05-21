@@ -1,4 +1,4 @@
-name: YaMDb workflow
+name: WoADB workflow
 
 on: [push]
 
