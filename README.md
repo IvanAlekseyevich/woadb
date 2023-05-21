@@ -1,4 +1,3 @@
-[![WoADB workflow push](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml/badge.svg)](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml)
 # WoADB CI & CD 
 
 ***WoADB - API проект, собирающий отзывы пользователей на различные произведения***
