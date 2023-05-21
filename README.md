@@ -1,9 +1,9 @@
-[![YaMDb workflow push](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml/badge.svg)](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml)
-# YaMDb CI & CD 
+[![WoADB workflow push](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml/badge.svg)](https://github.com/pozarnik/yamdb_final/actions/workflows/yamdb_workflow_push.yml)
+# WoADB CI & CD 
 
-***[YaMDb](https://github.com/pozarnik/yamdb_api) - API проект, собирающий отзывы пользователей на различные произведения***
+***WoADB - API проект, собирающий отзывы пользователей на различные произведения***
 
-## Возможности проекта YaMDb
+## Возможности проекта WoADB
 
 - Свободная регистрация пользователей
 - Получение токена с помощью кода, высылаемого на почту при регистрации
@@ -74,7 +74,7 @@ EMAIL_HOST_USER        # логин для авторизации на почт�
 EMAIL_HOST_PASSWORD    # пароль для авторизации на почтовом сервере
 ```
 
-## Документации проекта YaMDb
+## Документации проекта WoADB
 
 При запущенном проекте перейдите по одному из адресов в браузере
 
